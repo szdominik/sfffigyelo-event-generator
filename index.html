@@ -13,41 +13,55 @@
       <h2>SFF Figyelő esemény generátor</h2>
     </div>
 
-    <div class='col'>
-      <form class='mt-5'>
-        <div class='form-group'>
-          <label for='title'>Esemény megnevezés</label>
-          <input type='text' class='form-control' name='title'>
-        </div>
-        <div class='form-group'>
-          <label for='date'>Dátum</label>
-          <input type='text' class='form-control' name='date'>
-        </div>
-        <div class='form-group'>
-          <label for='location'>Helyszín megnevezés</label>
-          <input type='text' class='form-control' name='location'>
-        </div>
-        <div class='form-group'>
-          <label for='address'>Helyszín pontos cím</label>
-          <input type='text' class='form-control' name='address'>
-        </div>
-        <div class='form-group'>
-          <label for='maps'>Google Maps (rövid) link</label>
-          <input type='text' class='form-control' name='maps'>
-        </div>
-        <div class='form-group'>
-          <label for='fb-event'>Facebook esemény</label>
-          <input type='text' class='form-control' name='fb-event'>
-        </div>
-        <div class='form-group'>
-          <label for='more-info'>További információ link</label>
-          <input type='text' class='form-control' name='more-info'>
-        </div>
-        <div class='form-group'>
-          <label for='details'>Eseményleírás</label>
-          <textarea name='details' class='form-control' rows='10'></textarea>
-        </div>
-      </form>
+    <div class='row'>
+      <div class='col'>
+        <form class='mt-5' id='generatorForm'>
+          <div class='form-group'>
+            <label for='title'>Esemény megnevezés</label>
+            <input type='text' class='form-control' name='title'>
+          </div>
+          <div class='form-group'>
+            <label for='date'>Dátum</label>
+            <input type='text' class='form-control' name='date'>
+          </div>
+          <div class='form-group'>
+            <label for='location'>Helyszín megnevezés</label>
+            <input type='text' class='form-control' name='location'>
+          </div>
+          <div class='form-group'>
+            <label for='address'>Helyszín pontos cím</label>
+            <input type='text' class='form-control' name='address'>
+          </div>
+          <div class='form-group'>
+            <label for='maps'>Google Maps (rövid) link</label>
+            <input type='text' class='form-control' name='maps'>
+          </div>
+          <div class='form-group'>
+            <label for='fb-event'>Facebook esemény</label>
+            <input type='text' class='form-control' name='fb-event'>
+          </div>
+          <div class='form-group'>
+            <label for='other-link'>További információ link</label>
+            <input type='text' class='form-control' name='other-link'>
+          </div>
+          <div class='form-group'>
+            <label for='details'>Eseményleírás</label>
+            <textarea name='details' class='form-control' rows='10'></textarea>
+          </div>
+          <button type='submit' class='btn btn-primary'>Generálás</button>
+        </form>
+      </div>
+
+      <div class='col'>
+        <form class='mt-5' id='resultForm'>
+            <div class='form-group'>
+              <button type='submit' class='btn btn-primary' id='addCalendarBtn' disabled>Adjuk hozzá a naptárhoz!</button>
+            </div>
+            <div class='form-group'>
+              <textarea name='result' class='form-control' id='resultArea' rows='30' disabled></textarea>
+            </div>
+        </form>
+      </div>
     </div>
   </div>
 
