@@ -17,23 +17,25 @@
       <div class='col'>
         <form class='mt-5' id='generatorForm'>
           <div class='form-group'>
-            <label for='title'>Esemény megnevezés</label>
+            <label for='title'>Esemény megnevezés <small style='color: red;'>(szükséges!)</small></label>
             <input type='text' class='form-control' name='title'>
           </div>
           <div class='form-group'>
-            <label for='date'>Dátum</label>
+            <label for='date'>Dátum <small style='color: red;'>(szükséges!)</small></label>
             <input type='text' class='form-control' name='date'>
+            <small class="form-text text-muted">Elvárt formátum: 2017. május 14. 16:00-17:30</small>
           </div>
           <div class='form-group'>
-            <label for='location'>Helyszín megnevezés</label>
+            <label for='location'>Helyszín megnevezés <small style='color: red;'>(szükséges!)</small></label>
             <input type='text' class='form-control' name='location'>
           </div>
           <div class='form-group'>
-            <label for='address'>Helyszín pontos cím</label>
+            <label for='address'>Helyszín pontos cím <small style='color: red;'>(szükséges!)</small></label>
             <input type='text' class='form-control' name='address'>
+            <small class="form-text text-muted">Elvárt formátum: 1093. Budapest, Boráros tér 6.</small>
           </div>
           <div class='form-group'>
-            <label for='maps'>Google Maps (rövid) link</label>
+            <label for='maps'>Google Maps (rövid) link <small style='color: red;'>(szükséges!)</small></label>
             <input type='text' class='form-control' name='maps'>
           </div>
           <div class='form-group'>
@@ -45,17 +47,17 @@
             <input type='text' class='form-control' name='other-link'>
           </div>
           <div class='form-group'>
-            <label for='details'>Eseményleírás</label>
+            <label for='details'>Eseményleírás <small style='color: red;'>(szükséges!)</small></label>
             <textarea name='details' class='form-control' rows='10'></textarea>
           </div>
-          <button type='submit' class='btn btn-primary'>Generálás</button>
+          <button type='submit' class='btn btn-primary btn-lg btn-block mb-5'>Generálás</button>
         </form>
       </div>
 
       <div class='col'>
         <form class='mt-5' id='resultForm'>
             <div class='form-group'>
-              <a href="#" class="btn btn-primary disabled" role="button" id='addCalendarBtn'>
+              <a href="#" class="btn btn-primary disabled" target='_blank' role="button" id='addCalendarBtn'>
                 Adjuk hozzá a naptárhoz!
               </a>
             </div>

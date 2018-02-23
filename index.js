@@ -11,7 +11,7 @@ $(() => {
       result += `<a href="${datas.otherLink}">További információ</a><br /><br />`;
     }
 
-    result += `<div style='text-align: justify;'>${datas.details}</div>`;
+    result += `<div style='text-align: justify;'>"${datas.details}"</div>`;
 
     return result;
   };
@@ -26,7 +26,12 @@ $(() => {
     const endTime = moment(datas.date.substr(datas.date.indexOf('-') + 1, 5), 'HH:mm').format('HHmmss');
     link += `&dates=${date}T${startTime}Z/${date}T${endTime}Z`;
 
-    link += `&details=${datas.details} ${datas.fbEvent}`;
+    link += `&details=${datas.details}`;
+
+    if (datas.fbEvent) {
+      link += ` ${datas.fbEvent}`;
+    }
+
     link += `&location=${datas.location}, ${datas.address}`;
     link += '&sprop=http://sfffigyelo.blogspot.hu';
     return link;
