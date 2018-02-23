@@ -16,14 +16,17 @@ $(() => {
     return result;
   };
 
+  const formatTimes = timeString =>
+    moment(timeString, 'HH:mm').subtract(2, 'hours').format('HHmmss');
+
   const generateCalendarLink = datas => {
     let link = 'http://www.google.com/calendar/event?action=TEMPLATE&';
     link += `&text=${datas.title}`;
 
     moment.locale('hu');
     const date = moment(datas.date, 'YYYY MMMM DD').format('YYYYMMDD');
-    const startTime = moment(datas.date.substr(datas.date.indexOf(':') - 2, 5), 'HH:mm').format('HHmmss');
-    const endTime = moment(datas.date.substr(datas.date.indexOf('-') + 1, 5), 'HH:mm').format('HHmmss');
+    const startTime = formatTimes(datas.date.substr(datas.date.indexOf(':') - 2, 5));
+    const endTime = formatTimes(datas.date.substr(datas.date.indexOf('-') + 1, 5));
     link += `&dates=${date}T${startTime}Z/${date}T${endTime}Z`;
 
     link += `&details=${datas.details}`;
