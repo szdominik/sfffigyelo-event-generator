@@ -1,0 +1,18 @@
+{
+  "name": "sfffigyelo-event-generator",
+  "version": "1.0.0",
+  "description": "Generator to posting events into http://sfffigyelo.blogspot.hu.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/szdominik/sfffigyelo-event-generator.git"
+  },
+  "author": "Dominik Szabo <dominikblasir@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/szdominik/sfffigyelo-event-generator/issues"
+  },
+  "homepage": "https://github.com/szdominik/sfffigyelo-event-generator#readme",
+  "dependencies": {
+    "jquery": "^3.3.1"
+  }
+}
