@@ -11,5 +11,11 @@
   "bugs": {
     "url": "https://github.com/szdominik/sfffigyelo-event-generator/issues"
   },
-  "homepage": "https://github.com/szdominik/sfffigyelo-event-generator#readme"
+  "homepage": "https://github.com/szdominik/sfffigyelo-event-generator#readme",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.16.2"
+  }
 }
