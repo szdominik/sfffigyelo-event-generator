@@ -29,15 +29,15 @@ $(() => {
     const endTime = formatTimes(datas.date.substr(datas.date.indexOf('-') + 1, 5));
     link += `&dates=${date}T${startTime}Z/${date}T${endTime}Z`;
 
-    link += `&details=${datas.details}`;
+    link += `&details="${datas.details}"`;
 
     if (datas.fbEvent) {
-      link += ` ${datas.fbEvent}`;
+      link += `\n\n${datas.fbEvent}`;
     }
 
     link += `&location=${datas.location}, ${datas.address}`;
     link += '&sprop=http://sfffigyelo.blogspot.hu';
-    return link;
+    return encodeURI(link);
   };
 
   $('#generatorForm').on('submit', (e) => {
