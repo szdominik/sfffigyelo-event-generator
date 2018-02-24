@@ -20,7 +20,7 @@ $(() => {
     moment(timeString, 'HH:mm').subtract(2, 'hours').format('HHmmss');
 
   const generateCalendarLink = datas => {
-    let link = 'http://www.google.com/calendar/event?action=TEMPLATE&';
+    let link = 'http://www.google.com/calendar/event?action=TEMPLATE';
     link += `&text=${datas.title}`;
 
     moment.locale('hu');
