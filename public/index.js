@@ -34,6 +34,9 @@ $(() => {
     if (datas.fbEvent) {
       link += `\n\n${datas.fbEvent}`;
     }
+    if (datas.otherLink) {
+      link += `\n\n${datas.otherLink}`;
+    }
 
     link += `&location=${datas.location}, ${datas.address}`;
     link += '&sprop=http://sfffigyelo.blogspot.hu';
