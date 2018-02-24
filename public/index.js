@@ -17,7 +17,7 @@ $(() => {
   };
 
   const formatTimes = timeString =>
-    moment(timeString, 'HH:mm').subtract(2, 'hours').format('HHmmss');
+    moment(timeString, 'HH:mm').subtract(1, 'hours').format('HHmmss');
 
   const generateCalendarLink = datas => {
     let link = 'http://www.google.com/calendar/event?action=TEMPLATE';
