@@ -17,10 +17,10 @@ $(() => {
   };
 
   const formatTimes = timeString =>
-    moment(timeString, 'HH:mm').subtract(2, 'hours').format('HHmmss');
+    moment(timeString, 'HH:mm').subtract(1, 'hours').format('HHmmss');
 
   const generateCalendarLink = datas => {
-    let link = 'http://www.google.com/calendar/event?action=TEMPLATE&';
+    let link = 'http://www.google.com/calendar/event?action=TEMPLATE';
     link += `&text=${datas.title}`;
 
     moment.locale('hu');
@@ -29,15 +29,15 @@ $(() => {
     const endTime = formatTimes(datas.date.substr(datas.date.indexOf('-') + 1, 5));
     link += `&dates=${date}T${startTime}Z/${date}T${endTime}Z`;
 
-    link += `&details=${datas.details}`;
+    link += `&details="${datas.details}"`;
 
     if (datas.fbEvent) {
-      link += ` ${datas.fbEvent}`;
+      link += `\n\n${datas.fbEvent}`;
     }
 
     link += `&location=${datas.location}, ${datas.address}`;
     link += '&sprop=http://sfffigyelo.blogspot.hu';
-    return link;
+    return encodeURI(link);
   };
 
   $('#generatorForm').on('submit', (e) => {
