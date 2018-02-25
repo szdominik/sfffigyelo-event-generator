@@ -55,14 +55,14 @@ $(() => {
     $('#resultArea').prop('disabled', false);
 
     const datas = {
-      title: $('[name="title"]').val(),
-      date: $('[name="date"]').val(),
-      location: $('[name="location"]').val(),
-      maps: $('[name="maps"]').val(),
-      address: $('[name="address"]').val(),
-      fbEvent: $('[name="fb-event"]').val(),
-      otherLink: $('[name="other-link"]').val(),
-      details: $('[name="details"]').val(),
+      title: $('[name="title"]').val().trim(),
+      date: $('[name="date"]').val().trim(),
+      location: $('[name="location"]').val().trim(),
+      maps: $('[name="maps"]').val().trim(),
+      address: $('[name="address"]').val().trim(),
+      fbEvent: $('[name="fb-event"]').val().trim(),
+      otherLink: $('[name="other-link"]').val().trim(),
+      details: $('[name="details"]').val().trim(),
     };
     
     $('#resultArea').prop('value', generatePostText(datas));
