@@ -1,17 +1,22 @@
 $(() => {
   const generatePostText = datas => {
-    let result = `<b>Időpont:</b> ${datas.date}<br /><br />`;
-    result += `<b>Helyszín: </b><a href="${datas.maps}">${datas.address}</a> (${datas.location})<br /><br />`;
+    const newLine = '<br /><br />';
+    let result = `<b>Időpont:</b> ${datas.date}${newLine}`;
+    result += `<b>Helyszín: </b><a href="${datas.maps}">${datas.address}</a> (${datas.location})${newLine}`;
 
     if (datas.fbEvent !== '') {
-      result += `<a href="${datas.fbEvent}">Facebook-esemény</a><br /><br />`;
+      result += `<a href="${datas.fbEvent}">Facebook-esemény</a>${newLine}`;
     }
     
     if (datas.otherLink !== '') {
-      result += `<a href="${datas.otherLink}">További információ</a><br /><br />`;
+      result += `<a href="${datas.otherLink}">További információ</a>${newLine}`;
     }
 
-    result += `<div style='text-align: justify;'>"${datas.details}"</div>`;
+    const details = datas.details.split('\n').reduce((acc, val) => {
+      if(val === '') return acc + newLine;
+      return acc + val;
+    }, '');
+    result += `<div style='text-align: justify;'>"${details}"</div>`;
 
     return result;
   };
